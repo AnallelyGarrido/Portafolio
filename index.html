@@ -1,0 +1,883 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head><body>
+<meta name="description" content="Portafolio de Anallely Garrido: arquitectura de aprendizaje, diseño instruccional y plataformas de L&D.">
+<meta name="theme-color" content="#FBFCFA">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230B2E2E'/%3E%3Ctext x='50' y='66' font-size='46' font-family='Arial' font-weight='800' text-anchor='middle' fill='%23FFC61A'%3EAG%3C/text%3E%3C/svg%3E">
+<title>Portafolio confidencial de Anallely Garrido</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Layout: una sola columna editorial; barra superior con 4 secciones y un submenú de casos que aparece solo al entrar a Casos. */
+:root{
+  --paper:#FBFCFA; --ink:#0B2E2E; --muted:#4F6B68; --line:#DCE6E2; --card:#FFFFFF;
+  --mint:#00C781; --sun:#FFC61A; --on-sun:#0B2E2E;
+  --tint-sun:#FFF4CF; --tint-mint:#DDF6EB; --tint-teal:#DCEAE8;
+  --overlay:rgba(0,25,25,.92); --focus:#0B2E2E;
+  --display:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#071F20;--ink:#EAF5F1;--muted:#9BBDB6;--line:#1D3F40;--card:#0C2D2E;--tint-sun:#2D2A12;--tint-mint:#0E3A30;--tint-teal:#12393B;--overlay:rgba(0,12,12,.94);--focus:#00C781;color-scheme:dark}
+}
+:root[data-theme="dark"]{--paper:#071F20;--ink:#EAF5F1;--muted:#9BBDB6;--line:#1D3F40;--card:#0C2D2E;--tint-sun:#2D2A12;--tint-mint:#0E3A30;--tint-teal:#12393B;--overlay:rgba(0,12,12,.94);--focus:#00C781;color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7;overflow-x:hidden}
+[hidden]{display:none!important}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.wrap{width:min(1440px,100% - 56px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.08;letter-spacing:-.025em;font-weight:800;text-wrap:balance}
+section,#casos{scroll-margin-top:env(safe-area-inset-top,0px)}
+.proj,.live{scroll-margin-top:calc(56px + env(safe-area-inset-top,0px))}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- sistema de botones: 1 primario, 1 secundario, pills de navegación ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 .95rem/1 var(--body);text-decoration:none;padding:13px 24px;border-radius:999px;background:var(--ink);color:var(--paper);border:2px solid var(--ink);cursor:pointer;transition:background .15s,color .15s}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.sm{padding:9px 18px;font-size:.88rem}
+.pill{font:700 .9rem/1 var(--body);text-decoration:none;color:var(--muted);padding:9px 16px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:background .15s,color .15s}
+.pill:hover{color:var(--ink);background:color-mix(in srgb,var(--ink) 7%,transparent)}
+.pill.on{background:var(--ink);color:var(--paper)}
+
+/* ---------- barra superior ---------- */
+.top{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top-in{width:min(1440px,100% - 56px);margin-inline:auto;height:60px;display:flex;align-items:center;gap:8px}
+.brand{font:800 1.15rem var(--display);text-decoration:none;margin-right:auto}
+.nav{display:none;align-items:center;gap:4px}
+.top .cta{display:none;margin-left:12px}
+.burger{font:700 .9rem/1 var(--body);padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.menu{border-top:1px solid var(--line);padding:12px 28px 18px;display:flex;flex-direction:column;gap:4px}
+.menu .pill{padding:13px 16px;font-size:1rem}
+.menu .btn{justify-content:center;margin-top:10px}
+.sub{border-top:1px solid var(--line);background:var(--tint-mint)}
+.sub .pill{font-size:.85rem;padding:8px 14px;border-radius:10px}
+.sub .pill:hover{background:color-mix(in srgb,var(--card) 60%,transparent)}
+.sub .pill.on{background:var(--card);color:var(--ink);box-shadow:inset 0 -3px 0 var(--ink)}
+.sub-in{width:min(1440px,100% - 56px);margin-inline:auto;height:52px;display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none}
+.sub-in::-webkit-scrollbar{display:none}
+.sub-label{font:700 .78rem var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:8px;white-space:nowrap}
+@media(min-width:900px){.nav{display:flex}.top .cta{display:inline-flex}.burger,.menu{display:none!important}}
+
+/* ---------- hero ---------- */
+.hero{padding:132px 0 90px}
+.hero{padding:148px 0 96px}
+.hero h1{font-size:clamp(2.4rem,6vw,5rem);max-width:15em}
+.intro{font-size:1.2rem;color:var(--muted);max-width:44em;margin:28px 0 32px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 34px;max-width:760px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+@media(max-width:480px){.stats{gap:12px;margin-top:48px}.stats b{font-size:1.6rem}.stats div{font-size:.82rem}}
+.stats div{font-size:.9rem;color:var(--muted);line-height:1.3}
+.stats b{display:block;font:800 2rem var(--display);color:var(--ink);margin-bottom:2px}
+@media(max-width:760px){.hero{padding-top:100px}}
+
+/* ---------- sistema ---------- */
+.sys{padding:100px 0;border-top:1px solid var(--line)}
+.sys h2,.skills h2,.proj h2,.live h2,.method h2,.tray h2,.casos-head h2{font-size:clamp(2.2rem,4.8vw,3.8rem)}
+.lead{font-size:1.2rem;color:var(--muted);margin:16px 0 0;max-width:64em}
+.map{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:44px}
+.colhead{font:800 1.3rem/1.2 var(--display);padding-top:14px;border-top:5px solid var(--mint)}
+.colhead span{display:block;font:600 .92rem var(--body);color:var(--muted);margin-top:2px}
+.prog{display:block;position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:12px;font-size:.97rem;line-height:1.45;text-decoration:none;color:inherit}
+.prog b{display:block;font-weight:700}
+.prog span{color:var(--muted)}
+a.prog{padding-right:44px;transition:border-color .15s,transform .15s}
+a.prog::after{content:"\2192";position:absolute;right:16px;top:50%;translate:0 -50%;font-weight:800;color:var(--muted);transition:color .15s,translate .15s}
+a.prog:hover,a.prog:focus-visible{border-color:var(--ink);transform:translateY(-2px)}
+a.prog:hover::after,a.prog:focus-visible::after{color:var(--ink);translate:4px -50%}
+.model{margin-top:48px;padding:clamp(20px,3vw,34px);border-radius:24px;background:var(--tint-teal)}
+.model h3{font-size:1.3rem;line-height:1.2}
+.principles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0 0;padding:0;list-style:none}
+.principles li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:.97rem;line-height:1.45}
+.principles b{display:block;font-weight:700}
+.principles span{color:var(--muted)}
+.measure{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;margin-top:22px;padding-top:22px;border-top:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}
+.model .measure:only-child{margin:0;padding:0;border-top:0}
+.measure p{margin:0;max-width:46em}
+.measure p b{font-weight:800}
+.measure p span{color:var(--muted)}
+@media(max-width:980px){.map{grid-template-columns:repeat(2,1fr)}.principles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.map,.principles{grid-template-columns:1fr}.sys{padding:76px 0}}
+
+/* ---------- casos ---------- */
+.casos-head{padding:100px 0 0;border-top:1px solid var(--line)}
+.proj{padding:100px 0;border-top:1px solid var(--line)}
+.casos-head+.proj{border-top:0;padding-top:56px}
+.head{margin-bottom:46px}
+.split{display:flex;flex-direction:column-reverse;gap:44px}
+.facts{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:36px 48px}
+.facts dt{font:800 1.25rem var(--display);margin-bottom:4px}
+.facts dd{margin:0;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{font-weight:600;font-size:.88rem;padding:3px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.stage{border-radius:28px;padding:clamp(12px,2vw,26px)}
+.stage.sun{background:var(--tint-sun)}
+.stage.mint{background:var(--tint-mint)}
+.stage.teal{background:var(--tint-teal)}
+.shot{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card);box-shadow:0 22px 44px -26px rgba(0,50,50,.45)}
+.shot button,.pic button{all:unset;display:block;position:relative;cursor:zoom-in;width:100%}
+.shot button:focus-visible,.pic button:focus-visible{outline:3px solid var(--focus);outline-offset:-5px}
+.shot img{width:100%}
+.zoom::after{content:"Ampliar";position:absolute;right:12px;bottom:12px;font:700 .8rem/1 var(--body);padding:8px 13px;border-radius:999px;background:var(--ink);color:var(--paper);opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s}
+.zoom:hover::after,.zoom:focus-visible::after{opacity:1;transform:none}
+@media(hover:none){.zoom::after{opacity:.92;transform:none}}
+.cap{font-size:.95rem;color:var(--muted);margin:16px 2px 0}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab{font:700 .92rem var(--body);padding:8px 18px;border-radius:999px;border:1px solid transparent;background:color-mix(in srgb,var(--card) 70%,transparent);color:var(--ink);cursor:pointer}
+.tab:hover{background:var(--card)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.panel[hidden]{display:none}
+@media(prefers-reduced-motion:no-preference){.panel:not([hidden]){animation:swap .25s ease-out}}
+@keyframes swap{from{opacity:0}to{opacity:1}}
+@media(max-width:900px){.proj{padding:76px 0}.stage{padding:14px}.casos-head{padding-top:76px}}
+
+.ficha{display:grid;grid-template-columns:2fr 1fr;gap:18px 44px;margin:0 0 44px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ficha .rol{grid-row:1/3}
+.ficha .rol p{margin:6px 0 0;font-weight:500;color:var(--muted);line-height:1.6}
+.ficha small{display:block;font-size:.85rem;color:var(--muted);margin-bottom:2px}
+.ficha b{font-weight:700;line-height:1.35;display:block}
+@media(max-width:800px){.ficha{grid-template-columns:1fr;gap:16px}.ficha .rol{grid-row:auto}}
+
+/* automatización de cursos (n8n + IA) */
+.auto{margin-top:64px;padding:clamp(22px,3vw,40px);border-radius:28px;background:var(--tint-sun);border:1px solid var(--line)}
+.auto h3{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:10px}
+.auto p{margin:0;color:var(--muted);max-width:52em}
+.flow{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px 34px}
+.flow li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.flow i{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--sun);color:var(--on-sun);font:800 .85rem var(--display);font-style:normal;margin-bottom:10px}
+.flow li b{display:block;font:800 1.1rem/1.2 var(--display)}
+.flow li span{display:block;color:var(--muted);font-size:.93rem;line-height:1.45;margin-top:4px}
+.flow li+li::before{content:"→";position:absolute;left:-26px;top:50%;translate:0 -50%;font-weight:800;color:var(--muted)}
+.sla-bar{display:flex;align-items:center;gap:14px;margin-top:18px}
+.sla-bar::before,.sla-bar::after{content:"";flex:1;border-top:2px solid var(--ink)}
+.sla-bar span{padding:8px 20px;border-radius:999px;background:var(--ink);color:var(--paper);font:800 .95rem var(--body);white-space:nowrap}
+@media(max-width:1100px){.flow{grid-template-columns:repeat(2,1fr)}.flow li+li::before{display:none}}
+@media(max-width:600px){.flow{grid-template-columns:1fr}.flow li+li::before{display:block;content:"↓";left:50%;top:-22px;translate:-50% 0}.sla-bar span{white-space:normal;text-align:center}}
+
+/* en vivo */
+.live{padding:100px 0;border-top:1px solid var(--line)}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:46px;align-items:start}
+.pic{margin:0}
+.pic img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:40% 40%;border-radius:20px}
+.pic:nth-child(2) img{object-position:50% 30%}
+.pic .zoom::after{right:14px;bottom:14px}
+.pic figcaption{padding:14px 2px 0}
+.pic h3{font-size:1.5rem;margin-bottom:4px}
+.pic p{margin:0;color:var(--muted);font-size:.97rem}
+@media(max-width:860px){.pics{grid-template-columns:1fr}.live{padding:76px 0}}
+
+/* método */
+.method{padding:100px 0;border-top:1px solid var(--line);background:var(--tint-mint)}
+.path{list-style:none;padding:0;margin:52px 0 0;display:grid;grid-template-columns:repeat(6,1fr);gap:24px;position:relative}
+.path::before{content:"";position:absolute;left:30px;right:30px;top:21px;border-top:2px dashed color-mix(in srgb,var(--ink) 30%,transparent)}
+.stop{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:800 1.15rem var(--display);background:var(--sun);color:var(--on-sun);position:relative;z-index:1;margin-bottom:16px}
+.path h3{font-size:1.3rem;margin-bottom:6px}
+.path p{margin:0;color:var(--muted);font-size:.97rem}
+.tag{display:block;font-size:.82rem;font-weight:700;color:var(--muted);margin:-2px 0 6px}
+.loop{position:relative;margin:26px calc((100% - 120px)/6 - 22px) 0 22px;height:64px;border:2px dashed color-mix(in srgb,var(--ink) 30%,transparent);border-top:0;border-radius:0 0 22px 22px}
+.loop::before{content:"";position:absolute;left:-8px;top:-9px;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:11px solid color-mix(in srgb,var(--ink) 55%,transparent)}
+.loop p{position:absolute;left:50%;bottom:-16px;translate:-50% 0;margin:0;background:var(--tint-mint);padding:4px 18px;font-weight:700;font-size:.97rem;white-space:nowrap;text-align:center}
+@media(max-width:1100px){.loop p{white-space:normal;width:min(520px,86%)}}
+@media(max-width:900px){
+  .method{padding:76px 0}
+  .loop{margin:22px 0 0;height:auto;border:2px dashed color-mix(in srgb,var(--ink) 30%,transparent);border-radius:16px;padding:14px 16px}.loop::before{display:none}.loop p{position:static;translate:none;background:none;padding:0;width:auto}
+  .path{grid-template-columns:1fr;gap:26px}
+  .path::before{left:21px;right:auto;top:0;bottom:0;border-top:0;border-left:2px dashed color-mix(in srgb,var(--ink) 30%,transparent)}
+  .path li{padding-left:64px;position:relative}
+  .stop{position:absolute;left:0;top:0}
+}
+.andra{margin-top:70px;padding-top:40px;border-top:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}
+.andra h3,.amap-wrap h3{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:8px}
+.andra>p,.amap-wrap>p{margin:0;color:var(--muted);max-width:64em}
+.andra .facts{margin-top:28px}
+.build{margin-top:56px;padding-top:34px;border-top:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}
+.build h3{font-size:1.5rem}
+.build p{margin:6px 0 0;color:var(--muted);max-width:52em}
+
+/* mapa de acciones */
+.amap-wrap{margin-top:70px}
+.amap-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;min-height:40px}
+.amap-hint{font-size:.9rem;font-weight:600;color:var(--muted)}
+.amap-clear{font:700 .85rem/1 var(--body);padding:9px 16px;border-radius:999px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.amap-clear:hover{background:var(--ink);color:var(--paper)}
+.amap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 34px;margin-top:14px}
+.am{position:relative;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sun);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;font-weight:600;line-height:1.4;transition:opacity .2s,box-shadow .2s}
+.am small{display:block;font-weight:500;font-size:.85rem;color:var(--muted);margin-bottom:6px}
+.am .sub2{display:block;font-weight:500;color:var(--muted);font-size:.93rem;margin-top:4px}
+.am.meta{grid-column:1;grid-row:1/4;font:800 1.45rem var(--display);line-height:1.15}
+.am.meta small{font:500 .85rem var(--body)}
+.am.act{grid-column:2;border-left-color:var(--mint)}
+.am.pra{grid-column:3;border-left-color:var(--ink)}
+.am.sup{grid-column:4;grid-row:1/4}
+.am.act::before,.am.pra::before,.am.sup::before{content:"→";position:absolute;left:-27px;top:50%;translate:0 -50%;color:var(--muted);font-weight:700}
+.am.act,.am.pra{cursor:pointer}
+.amap.sel .am{opacity:.35}
+.amap.sel .am.on{opacity:1}
+.amap.sel .am.on.act,.amap.sel .am.on.pra{box-shadow:0 0 0 2px var(--mint)}
+@media(max-width:900px){
+  .amap{grid-template-columns:1fr;gap:12px}
+  .am.meta,.am.act,.am.pra,.am.sup{grid-column:auto;grid-row:auto}
+  .am.act::before,.am.pra::before,.am.sup::before{display:none}
+  .am.pra{margin-left:22px}
+}
+
+/* trayectoria */
+.tray{padding:100px 0;border-top:1px solid var(--line)}
+.tray h2{margin-bottom:40px}
+.job{display:grid;grid-template-columns:220px 1fr;gap:6px 40px;padding:28px 0;border-top:1px solid var(--line)}
+.job time{font-weight:700;color:var(--muted);font-size:.95rem}
+.job h3{font-size:1.45rem;margin-bottom:2px}
+.job .where{font-weight:700;margin:0}
+.job ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:9px;max-width:62em}
+.job li{position:relative;padding-left:22px;color:var(--muted);line-height:1.6}
+.job li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:8px;border-radius:50%;background:var(--mint)}
+.job strong{color:var(--ink);font-weight:700}
+@media(max-width:800px){.job{grid-template-columns:1fr}.tray{padding:76px 0}}
+
+/* habilidades */
+.skills{padding:100px 0;border-top:1px solid var(--line);background:var(--tint-sun)}
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.sk-block{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 24px}
+.sk-block h3{font-size:1.2rem;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-weight:600;font-size:.9rem;padding:5px 14px;border-radius:999px;background:var(--tint-sun);border:1px solid var(--line);color:var(--ink)}
+.tools-h{font-size:clamp(1.6rem,3vw,2.2rem);margin:64px 0 0}
+.tool-group{margin-top:30px}
+.tool-group h4{font:800 .85rem var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.tool-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr));gap:12px}
+.tool{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.mono{flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--tint-mint);color:var(--ink);font:800 1rem var(--display);letter-spacing:-.02em}
+.tool b{display:block;font-weight:800;line-height:1.2}
+.tool div>span{display:block;color:var(--muted);font-size:.88rem;line-height:1.35;margin-top:2px}
+.sk-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px 40px;margin-top:56px;padding-top:28px;border-top:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}
+.sk-meta small{display:block;font-size:.85rem;color:var(--muted);margin-bottom:2px}
+.sk-meta b{font-weight:700}
+@media(max-width:980px){.sk-grid{grid-template-columns:1fr}.skills{padding:76px 0}}
+
+/* pie */
+.foot{border-top:1px solid var(--line);background:var(--tint-sun);padding:28px 0 calc(28px + env(safe-area-inset-bottom,0px))}
+.foot-in{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;font-size:.92rem;color:var(--muted)}
+.foot a{font-weight:700;color:var(--ink)}
+
+/* visor de imágenes */
+dialog{border:0;padding:0;margin:0;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;background:var(--overlay);color:#fff;overflow:hidden}
+dialog::backdrop{background:transparent}
+dialog[open]{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto minmax(0,1fr) auto;grid-template-areas:"top top top" "prev stage next" "thumbs thumbs thumbs";gap:8px 6px;padding:calc(14px + env(safe-area-inset-top,0px)) 14px calc(14px + env(safe-area-inset-bottom,0px))}
+.lb-top{grid-area:top;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:700}
+.lb-btn{font:700 .9rem/1 var(--body);border:0;border-radius:999px;padding:11px 20px;background:#fff;color:#0B2E2E;cursor:pointer}
+.lb-btn:hover{background:var(--sun)}
+.lb-nav{align-self:center;width:46px;height:46px;border-radius:50%;padding:0;font-size:1.6rem;line-height:1}
+.lb-nav.prev{grid-area:prev}.lb-nav.next{grid-area:next}
+.lb-stage{grid-area:stage;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;touch-action:pan-y}
+.lb-stage img{max-width:100%;max-height:100%;min-height:0;width:auto;height:auto;object-fit:contain;border-radius:12px;border:3px solid #fff;background:#fff}
+.lb-stage p{margin:0;max-width:60em;text-align:center;font-size:.95rem;line-height:1.45;color:#E8F3EF}
+.lb-thumbs{grid-area:thumbs;display:flex;justify-content:center;gap:10px;overflow-x:auto;padding:4px 2px}
+.lb-thumbs button{all:unset;flex:none;cursor:pointer;border-radius:8px;border:2px solid transparent;opacity:.6;overflow:hidden;line-height:0}
+.lb-thumbs button:hover{opacity:1}
+.lb-thumbs button[aria-current="true"]{border-color:var(--sun);opacity:1}
+.lb-thumbs button:focus-visible{outline:3px solid #00C781}
+.lb-thumbs img{width:84px;height:52px;object-fit:cover;object-position:top left}
+dialog.single .lb-nav,dialog.single .lb-thumbs{display:none}
+@media(max-width:600px){dialog[open]{padding-inline:8px;column-gap:4px}.lb-nav{width:38px;height:38px;font-size:1.3rem}.lb-thumbs img{width:64px;height:40px}}
+</style>
+<style id="compact-skills">
+/* habilidades compactas */
+.skills{padding:56px 0 52px}
+.skills .lead{margin-top:10px}
+.sk-grid{gap:14px;margin-top:26px}
+.sk-block{padding:16px 18px;border-radius:16px}
+.sk-block h3{font-size:1.02rem;margin-bottom:10px}
+.tags{gap:6px}
+.tags span{font-size:.82rem;padding:3px 10px}
+.tools-h{font-size:1.25rem;margin:30px 0 0}
+.tool-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 26px;margin-top:14px}
+.tool-group{margin-top:0}
+.tool-group h4{font-size:.74rem;margin:0 0 8px}
+.tool-row{display:flex;flex-wrap:wrap;gap:6px}
+.tool{gap:7px;padding:4px 12px 4px 5px;border-radius:999px;align-items:center}
+.mono{width:26px;height:26px;border-radius:50%;font-size:.62rem}
+.tool b{font-size:.84rem;font-weight:700;white-space:nowrap}
+.tool div>span{display:none}
+.sk-meta{margin-top:26px;padding-top:16px;gap:12px 40px}
+@media(max-width:980px){.skills{padding:48px 0}.tool-groups{grid-template-columns:1fr}.sk-grid{grid-template-columns:1fr}}
+</style>
+
+
+<header class="top" id="top">
+  <div class="top-in">
+    <a class="brand" href="#inicio">Anallely Garrido</a>
+    <nav class="nav" id="nav" aria-label="Secciones">
+      <a class="pill" href="#sistema" data-sec="sistema">Sistema</a>
+      <a class="pill" href="#casos" data-sec="casos">Casos</a>
+      <a class="pill" href="#metodo" data-sec="metodo">Proceso</a>
+      <a class="pill" href="#trayectoria" data-sec="trayectoria">Trayectoria</a>
+      <a class="pill" href="#habilidades" data-sec="habilidades">Habilidades</a>
+    </nav>
+    <a class="btn sm cta" href="https://www.linkedin.com/in/anallely-garrido/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+  </div>
+  <div class="menu" id="menu" hidden>
+    <a class="pill" href="#sistema" data-sec="sistema">Sistema</a>
+    <a class="pill" href="#casos" data-sec="casos">Casos</a>
+    <a class="pill" href="#metodo" data-sec="metodo">Proceso</a>
+    <a class="pill" href="#trayectoria" data-sec="trayectoria">Trayectoria</a>
+      <a class="pill" href="#habilidades" data-sec="habilidades">Habilidades</a>
+    <a class="btn" href="https://www.linkedin.com/in/anallely-garrido/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+  <div class="sub" id="sub" hidden>
+    <nav class="sub-in" id="subin" aria-label="Casos">
+      <span class="sub-label">Casos</span>
+      <a class="pill" href="#ops">Ops Academy</a>
+      <a class="pill" href="#onboarding">Onboarding</a>
+      <a class="pill" href="#hub">Learning Hub</a>
+      <a class="pill" href="#scorm">Cursos SCORM</a>
+      <a class="pill" href="#dashboard">Dashboard</a>
+      <a class="pill" href="#vivo">En vivo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-text">
+      <h1>Diseñando experiencias de aprendizaje a la medida.</h1>
+      <p class="intro">Soy psicóloga por la UNAM y tengo más de 7 años en startups, tecnología y fintech, entre aprendizaje y desarrollo, talento y experiencia del colaborador. Hoy diseño y opero la arquitectura de aprendizaje de Operaciones, y construyo con IA y automatización las plataformas que la sostienen.</p>
+      <a class="btn" href="#casos">Ver los casos</a>
+      <div class="stats">
+        <div><b>+95%</b>satisfacción<br>en academias</div>
+        <div><b>+80%</b>del personal certificado<br>en onboarding</div>
+        <div><b>900+</b>colaboradores<br>impactados</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sys" id="sistema">
+  <div class="wrap">
+    <h2>Cómo se conecta el aprendizaje en la empresa</h2>
+    <p class="lead">Cada programa usa el mismo modelo de diseño y se mide en un solo lugar.</p>
+    <div class="map">
+      <div class="col">
+        <div class="colhead">Agentes de Operaciones<span>Cientos de personas</span></div>
+        <div class="prog"><b>Academia de Agentes</b><span>Virtual, dentro del LMS</span></div>
+        <a class="prog" href="#ops"><b>Ops Academy</b><span>Módulos, retos y simulador. Los cursos nuevos se crean con n8n y agentes de IA.</span></a>
+      </div>
+      <div class="col">
+        <div class="colhead">Team leaders y managers<span>Decenas de personas</span></div>
+        <div class="prog"><b>Academia de Liderazgo</b><span>Presencial</span></div>
+        <a class="prog" href="#ops"><b>Módulos para team leaders</b><span>Dentro de Ops Academy</span></a>
+      </div>
+      <div class="col">
+        <div class="colhead">Nuevos ingresos y staff<span>Desde su primer día</span></div>
+        <a class="prog" href="#onboarding"><b>Onboarding de Operaciones</b><span>Bienvenida, ABC de la empresa y Ops Inmersión</span></a>
+        <a class="prog" href="#hub"><b>Learning Hub</b><span>Para Operaciones y staff</span></a>
+      </div>
+      <div class="col">
+        <div class="colhead">Toda la empresa<span>Más de 900 colaboradores activos</span></div>
+        <a class="prog" href="#dashboard"><b>Cursos obligatorios</b><span>Más de 20 cursos con seguimiento en el dashboard</span></a>
+        <a class="prog" href="#scorm"><b>Cursos SCORM</b><span>Con la identidad propia de L&amp;D</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="casos">
+<div class="casos-head">
+  <div class="wrap">
+    <h2>Casos</h2>
+    <p class="lead">Seis proyectos del mismo sistema de aprendizaje.</p>
+  </div>
+</div>
+
+<section class="proj" id="ops">
+  <div class="wrap">
+    <div class="head">
+      <h2>Ops Academy</h2>
+      <p class="lead">La academia gamificada donde Operaciones practica antes de contestar la llamada.</p>
+    </div>
+    <div class="ficha">
+      <div class="rol"><small>Mi rol</small><p>Definí la meta de negocio con los stakeholders y la bajé a acciones concretas del puesto. Diseñé y desarrollé la plataforma completa, incluidos los módulos para team leaders, y la integré con n8n y agentes de IA para crear cursos.</p></div>
+      <div><small>Usuarios</small><b>Equipo de Operaciones, incluidos team leaders</b></div>
+      <div><small>Resultado</small><b>Más de 95% de satisfacción en las academias</b></div>
+    </div>
+    <div class="split">
+      <dl class="facts">
+        <div><dt>El reto</dt><dd>Subir la resolución en el primer contacto y la retención de clientes. La acción que entrena: aplicar soluciones flexibles con empatía y precisión.</dd></div>
+        <div><dt>La solución</dt><dd>Módulos que se aprenden como podcast, material visual o reto interactivo. Un Centro de Retos que da XP. Y el Ops Lab, un simulador con casos de clientes que se filtran por habilidad y dificultad.</dd></div>
+      </dl>
+      <div class="stage sun">
+        <div class="tabs" role="tablist" aria-label="Pantallas de Ops Academy">
+          <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true">Módulos</button>
+          <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Formatos</button>
+          <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Retos</button>
+          <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">Ops Lab</button>
+        </div>
+        <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+          <figure class="shot"><button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/inicio-de-ops-academy-buscador.jpg" width="1300" height="641" loading="lazy" decoding="async" alt="Inicio de Ops Academy: buscador y tarjetas de módulos para Operaciones"></button></figure>
+          <p class="cap">Inicio: buscador, nivel con XP y módulos por tema.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+          <figure class="shot"><button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/modulo-pensamiento-analitico-con-tres.jpg" width="1300" height="516" loading="lazy" decoding="async" alt="Módulo Pensamiento analítico con tres formatos: podcast, visual e interactivos"></button></figure>
+          <p class="cap">Cada módulo se aprende como podcast, material visual o reto interactivo.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+          <figure class="shot"><button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/centro-de-retos-con-trivia.jpg" width="1300" height="635" loading="lazy" decoding="async" alt="Centro de Retos con trivia, escenarios, llama al cliente, In Your Shoes y Survival"></button></figure>
+          <p class="cap">Centro de Retos: trivia, escenarios, llamada al cliente, In Your Shoes y Survival.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+          <figure class="shot"><button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/ops-lab-con-casos-de.jpg" width="1300" height="644" loading="lazy" decoding="async" alt="Ops Lab con casos de clientes por habilidad y dificultad"></button></figure>
+          <p class="cap">Ops Lab: casos como el cliente desempleado o el enojado por cobros de interés.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="auto" id="n8n">
+      <h3>Cursos creados con n8n y agentes de IA</h3>
+      <p>Integré n8n con agentes de IA para crear cursos dentro de Ops Academy, con una revisión del experto antes de publicar.</p>
+      <ol class="flow" aria-label="Cómo se crea un curso">
+        <li><i>1</i><b>Solicitud de curso</b><span>La necesidad de aprendizaje de Operaciones.</span></li>
+        <li><i>2</i><b>n8n</b><span>Conecta y coordina el flujo.</span></li>
+        <li><i>3</i><b>Agentes de IA</b><span>Generan el curso.</span></li>
+        <li><i>4</i><b>Curación y revisión</b><span>Un experto valida el contenido y se revisa el curso.</span></li>
+        <li><i>5</i><b>Curso en Ops Academy</b><span>Listo para que Operaciones lo tome.</span></li>
+      </ol>
+      <div class="sla-bar" role="note"><span>SLA de 3 a 6 días por curso</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="proj" id="onboarding">
+  <div class="wrap">
+    <div class="head">
+      <h2>Onboarding de Operaciones</h2>
+      <p class="lead">Un onboarding rediseñado en tres piezas, medido al final del periodo de prueba.</p>
+    </div>
+    <div class="ficha">
+      <div class="rol"><small>Mi rol</small><p>Rediseñé el onboarding de Operaciones en tres piezas y medí el resultado al cierre del periodo de prueba.</p></div>
+      <div><small>Usuarios</small><b>Personal nuevo de Operaciones y staff</b></div>
+      <div><small>Resultado</small><b>NPS de 4.5+ y más de 80% del personal certificado con éxito</b></div>
+    </div>
+    <div class="split">
+      <dl class="facts">
+        <div><dt>Bienvenida a la empresa</dt><dd>La primera pieza del onboarding: la misión, la visión y el contexto de la empresa para quien llega.</dd></div>
+        <div><dt>ABC de la empresa</dt><dd>Se agregó para que las personas tengan desde su primer día conocimientos más amplios sobre cómo funciona la empresa.</dd></div>
+        <div><dt>Ops Inmersión</dt><dd>La pieza para el staff: una inmersión en la operación para que equipos como Producto, Data y otras áreas de staff se empapen del conocimiento y de cómo funciona la operación.</dd></div>
+      </dl>
+      <div class="stage mint">
+        <figure class="shot"><button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/diapositiva-de-bienvenida-a-la.jpg" width="892" height="501" loading="lazy" decoding="async" alt="Diapositiva de Bienvenida a la empresa con la misión y la visión de la empresa"></button></figure>
+        <p class="cap">Bienvenida a la empresa: misión y visión de la empresa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proj" id="hub">
+  <div class="wrap">
+    <div class="head">
+      <h2>Learning Hub</h2>
+      <p class="lead">Un solo punto de entrada para pedir capacitación, tomar cursos, escuchar y compartir lo aprendido.</p>
+    </div>
+    <div class="ficha">
+      <div class="rol"><small>Mi rol</small><p>Diseñé y desarrollé el centro de aprendizaje y definí cómo se conectan sus secciones. También creé el podcast interno y el muro de aprendizajes.</p></div>
+      <div><small>Usuarios</small><b>Personal de Operaciones y staff</b></div>
+    </div>
+    <div class="split">
+      <dl class="facts">
+        <div><dt>El reto</dt><dd>Concentrar el aprendizaje de la empresa en un solo lugar para Operaciones y staff, en vez de tenerlo repartido.</dd></div>
+        <div><dt>Qué reúne</dt><dd>Cada sección responde a una necesidad distinta, desde pedir una capacitación hasta tomar cursos y certificarse.</dd>
+          <div class="chips"><span class="chip">Solicitud de capacitación</span><span class="chip">Podcast interno</span><span class="chip">Business Academy</span><span class="chip">Programa de crecimiento</span><span class="chip">Teaming &amp; Collaboration</span><span class="chip">Muro de aprendizajes</span><span class="chip">Biblioteca e-learning</span></div></div>
+        <div><dt>Aprender entre pares</dt><dd>Muro de aprendizajes ayuda a que las personas compartan lo que aprenden, con likes y comentarios. El podcast interno suma episodios de audio cortos, en inglés y español.</dd></div>
+      </dl>
+      <div class="stage mint">
+        <div class="tabs" role="tablist" aria-label="Pantallas del Learning Hub">
+          <button class="tab" role="tab" id="ht1" aria-controls="hp1" aria-selected="true">Inicio</button>
+          <button class="tab" role="tab" id="ht2" aria-controls="hp2" aria-selected="false" tabindex="-1">Biblioteca e-learning</button>
+          <button class="tab" role="tab" id="ht3" aria-controls="hp3" aria-selected="false" tabindex="-1">Podcast interno</button>
+          <button class="tab" role="tab" id="ht4" aria-controls="hp4" aria-selected="false" tabindex="-1">Muro de aprendizajes</button>
+        </div>
+        <div class="panel" role="tabpanel" id="hp1" aria-labelledby="ht1">
+          <figure class="shot"><button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/inicio-del-learning-hub-con.jpg" width="1300" height="712" loading="lazy" decoding="async" alt="Inicio del Learning Hub con las secciones disponibles"></button></figure>
+          <p class="cap">Inicio: solicitud de capacitación, Podcast interno, Business Academy, Programa de crecimiento, Teaming &amp; Collaboration y Muro de aprendizajes.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="hp2" aria-labelledby="ht2" hidden>
+          <figure class="shot"><button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/seccion-biblioteca-e-learning-con.jpg" width="1300" height="781" loading="lazy" decoding="async" alt="Sección Biblioteca e-learning con cursos activos, certificados y descubrir cursos"></button></figure>
+          <p class="cap">Biblioteca e-learning: cursos activos, certificados y cursos por descubrir.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="hp3" aria-labelledby="ht3" hidden>
+          <figure class="shot"><button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/podcast-interno-reproductor-de-podcast.jpg" width="1300" height="704" loading="lazy" decoding="async" alt="Podcast interno: reproductor de podcast y lista de episodios filtrable"></button></figure>
+          <p class="cap">Podcast interno: episodios cortos que se filtran por habilidad y reciben likes.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="hp4" aria-labelledby="ht4" hidden>
+          <figure class="shot"><button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/muro-de-aprendizajes-caja-para.jpg" width="900" height="696" loading="lazy" decoding="async" alt="Muro de aprendizajes: caja para compartir un aprendizaje y publicación con likes"></button></figure>
+          <p class="cap">Muro de aprendizajes: un espacio para compartir lecciones entre colaboradores.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proj" id="scorm">
+  <div class="wrap">
+    <div class="head">
+      <h2>Cursos SCORM</h2>
+      <p class="lead">Cursos e-learning interactivos, empaquetados en SCORM y cargados en la biblioteca de e-learning.</p>
+    </div>
+    <div class="ficha">
+      <div class="rol"><small>Mi rol</small><p>Diseñé la estructura, los bloques de contenido y los ejercicios de práctica de los cursos e-learning, y los empaqueté en SCORM para cargarlos en la plataforma de aprendizaje. También diseñé el concepto de marca de L&amp;D como identidad propia.</p></div>
+      <div><small>Usuarios</small><b>Colaboradores de la empresa</b></div>
+    </div>
+    <div class="split">
+      <dl class="facts">
+        <div><dt>Los cursos</dt><dd>Cada curso se construye como contenido interactivo, con bloques de contenido y ejercicios de práctica, y se empaqueta en SCORM para integrarse a la biblioteca de e-learning.</dd></div>
+        <div><dt>Marca de L&amp;D</dt><dd>Diseñé el concepto de marca para L&amp;D como identidad propia del área.</dd></div>
+        <div><dt>Ejemplo de esta página</dt><dd>Un curso de cumplimiento normativo 2026: 15 temas organizados en bloques temáticos, con glosario y ejercicios como completar espacios en blanco.</dd></div>
+      </dl>
+      <div class="stage teal">
+        <figure class="shot"><button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/curso-scorm-de-cumplimiento-con.jpg" width="1300" height="676" loading="lazy" decoding="async" alt="Curso SCORM de cumplimiento con temario lateral, barra de avance y ejercicio de completar espacios"></button></figure>
+        <p class="cap">Ejemplo, curso de cumplimiento: temario por bloques, barra de avance y práctica dentro del tema.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proj" id="dashboard">
+  <div class="wrap">
+    <div class="head">
+      <h2>Dashboard de capacitaciones obligatorias</h2>
+      <p class="lead">Un tablero para saber quién completó qué sin pedir reportes.</p>
+    </div>
+    <div class="ficha">
+      <div class="rol"><small>Mi rol</small><p>Diseñé y desarrollé el tablero que concentra el avance de las capacitaciones obligatorias. Definí los indicadores y los filtros.</p></div>
+      <div><small>Usuarios</small><b>Equipos que dan seguimiento a las capacitaciones obligatorias</b></div>
+    </div>
+    <div class="split">
+      <dl class="facts">
+        <div><dt>Qué muestra</dt><dd>Más de 900 colaboradores activos, más de 20 cursos visibles y el avance general de la plantilla en un vistazo.</dd></div>
+        <div><dt>Cómo se usa</dt><dd>Filtros por sitio, rol, mánager directo, área, curso y estatus, con pestañas para toda la empresa, nuevos ingresos, otros países y managers.</dd></div>
+      </dl>
+      <div class="stage teal">
+        <figure class="shot"><button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/dashboard-de-capacitaciones-obligatorias-con.jpg" width="1400" height="607" loading="lazy" decoding="async" alt="Dashboard de capacitaciones obligatorias con indicadores, filtros dinámicos y estatus por curso"></button></figure>
+        <p class="cap">Dashboard de capacitaciones obligatorias: indicadores, filtros y estatus por curso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="live" id="vivo">
+  <div class="wrap">
+    <h2>También enseño sin pantallas.</h2>
+    <p class="lead">Diseño y facilito dinámicas presenciales para autorregular emociones, alinear líderes y unir equipos de operación.</p>
+    <div class="pics">
+      <figure class="pic">
+        <button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/dos-personas-pegan-notas-en.jpg" width="1100" height="495" loading="lazy" decoding="async" alt="Dos personas pegan notas en una pared frente a una proyección que dice Identifica y nombra tus emociones"></button>
+        <figcaption><h3>Muro de reconocimiento y gestión emocional</h3><p>Cada persona pone nombre a lo que siente en el trabajo y lo pega en la pared.</p></figcaption>
+      </figure>
+      <figure class="pic">
+        <button type="button" class="zoom" aria-label="Ampliar imagen"><img src="assets/img/grupo-de-ocho-personas-sentadas.jpg" width="1100" height="825" loading="lazy" decoding="async" alt="Grupo de ocho personas sentadas alrededor de una mesa en un taller"></button>
+        <figcaption><h3>Mesas de trabajo</h3><p>Grupos pequeños para aprender haciendo y crear pertenencia.</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+</div>
+
+<section class="method" id="metodo">
+  <div class="wrap">
+    <h2>Así diseño: del usuario al impacto.</h2>
+    <p class="lead">Sigo la lógica de ADDIE y defino con Action Mapping. Mi regla: si una pantalla no cambia lo que alguien hace en su puesto, no entra.</p>
+    <ol class="path">
+      <li><div class="stop">1</div><h3>Entender</h3><span class="tag">ADDIE: análisis</span><p>Entrevisto a expertos y usuarios finales, y armo arquetipos de aprendizaje y mapas de empatía.</p></li>
+      <li><div class="stop">2</div><h3>Definir</h3><span class="tag">ADDIE: análisis, con Action Mapping</span><p>Action Mapping: la meta de negocio y las acciones reales que la persona hace en su puesto.</p></li>
+      <li><div class="stop">3</div><h3>Storyboard</h3><span class="tag">ADDIE: diseño</span><p>Escribo las pantallas y los escenarios, con sus opciones y consecuencias.</p></li>
+      <li><div class="stop">4</div><h3>Construir</h3><span class="tag">ADDIE: desarrollo, con prototipado rápido</span><p>Armo el storyboard y programo la plataforma yo misma, con prototipo rápido y IA como apoyo.</p></li>
+      <li><div class="stop">5</div><h3>Implementar</h3><span class="tag">ADDIE: implementación</span><p>Lanzo el programa, comunico a las personas y acompaño el arranque, como en el onboarding y en la asignación de cursos obligatorios.</p></li>
+      <li><div class="stop">6</div><h3>Evaluar</h3><span class="tag">ADDIE: evaluación</span><p>Mido el impacto con datos: satisfacción, certificación y cumplimiento.</p></li>
+    </ol>
+    <div class="loop"><p>Con los datos de cada cohorte ajusto el diseño y el ciclo vuelve a empezar.</p></div>
+    <div class="amap-wrap">
+      <h3>Definir en práctica: el mapa de acciones de Ops Academy</h3>
+      <p>Así bajé una meta de negocio a las acciones que hace un agente y a los casos donde las practica.</p>
+      <div class="amap-bar">
+        <span class="amap-hint" id="amhint">Toca una acción o una práctica para ver cómo se conectan.</span>
+        <button type="button" class="amap-clear" id="amclear" hidden>Quitar selección</button>
+      </div>
+      <div class="amap" id="amap">
+        <div class="am meta" data-g="all"><small>Meta de negocio</small>Subir la resolución en el primer contacto y la retención de clientes.</div>
+        <div class="am act" data-g="1" role="button" aria-pressed="false"><small>Acción en el puesto</small>Negociar planes de pago flexibles con alguien que perdió su empleo.</div>
+        <div class="am pra" data-g="1" role="button" aria-pressed="false"><small>Práctica en Ops Lab</small>Cliente desempleado<span class="sub2">Negociación, intermedio</span></div>
+        <div class="am act" data-g="2" role="button" aria-pressed="false"><small>Acción en el puesto</small>Contener a un cliente molesto por cobros de interés.</div>
+        <div class="am pra" data-g="2" role="button" aria-pressed="false"><small>Práctica en Ops Lab</small>Cliente enojado por mala forma de cobrar<span class="sub2">Comunicación efectiva, básico</span></div>
+        <div class="am act" data-g="3" role="button" aria-pressed="false"><small>Acción en el puesto</small>Identificar las evasivas de quien pospone su aclaración de cargos.</div>
+        <div class="am pra" data-g="3" role="button" aria-pressed="false"><small>Práctica en Ops Lab</small>Cliente evasivo<span class="sub2">Escucha activa, avanzado</span></div>
+        <div class="am sup" data-g="all"><small>Apoyo</small>Podcast, material visual y notebook de consulta en cada módulo.</div>
+      </div>
+    </div>
+    <div class="andra">
+      <h3>Diseño pensando en cómo aprenden los adultos</h3>
+      <p>Aplico principios de andragogía: las personas aprenden mejor lo que pueden usar de inmediato, practicar con casos reales y elegir cómo estudiar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tray" id="trayectoria">
+  <div class="wrap">
+    <h2>Dónde he trabajado</h2>
+    <div class="jobs">
+      <article class="job">
+        <time>Dic 2023 a hoy</time>
+        <div><h3>Sr. People Experience</h3><p class="where">Stori</p>
+          <ul>
+            <li>Diseñé y administro la <strong>Academia de Agentes</strong> para cientos de personas, con <strong>más de 95% de satisfacción</strong> y alineada con las necesidades de la operación.</li>
+            <li>Lideré la <strong>Academia de Liderazgo</strong> para decenas de líderes: rediseñé el currículo, los recursos y la ejecución del programa, con <strong>más de 95% de satisfacción</strong>.</li>
+            <li>Gestiono las <strong>capacitaciones obligatorias</strong> de más de 900 colaboradores, con seguimiento del cumplimiento.</li>
+            <li>Soy dueña del <strong>onboarding</strong> de punta a punta: rutas de aprendizaje y soluciones mixtas para ingreso, liderazgo y desarrollo de talento.</li>
+            <li>Construí el <strong>Learning Hub</strong> de punta a punta como solo builder, con Claude, Gemini, Google Apps Script y Firebase: academias gamificadas, dashboards interactivos y automatización interna.</li>
+            <li>Administro el <strong>LMS</strong> (contenido, datos y proveedores externos, de la selección al seguimiento) y establecí las políticas y procedimientos de capacitación.</li>
+            <li>Comunicación interna y cultura durante transiciones organizacionales.</li>
+          </ul></div>
+      </article>
+      <article class="job">
+        <time>May a Dic 2023</time>
+        <div><h3>Sr. Talent Specialist</h3><p class="where">Stori</p>
+          <ul>
+            <li>Cultura organizacional y comunicación interna para impulsar el engagement entre áreas.</li>
+            <li>Amplié el reclutamiento a perfiles complejos de Tecnología, Marketing, Producto, Data y Operaciones, con ATS.</li>
+            <li>Estrategias de atracción de talento con bolsas de trabajo, bases de candidatos, redes sociales y comunidades tech.</li>
+          </ul></div>
+      </article>
+      <article class="job">
+        <time>Abr 2022 a May 2023</time>
+        <div><h3>Head of People</h3><p class="where">Ozon</p>
+          <ul>
+            <li><strong>Employer branding</strong> y talent marketing, con alianzas con bootcamps, universidades y comunidades tech.</li>
+            <li>Operación de People y cultura: onboarding y offboarding, comunicación interna, programas de L&amp;D e iniciativas de Diversidad e Inclusión.</li>
+            <li>Armé el marco de <strong>gestión del desempeño</strong> (OKRs, evaluaciones y planes de carrera) para unas 50 personas.</li>
+            <li>Reclutamiento de punta a punta, relaciones laborales y presupuesto de plantilla, en alianza directa con C-Level y hiring managers.</li>
+          </ul></div>
+      </article>
+      <article class="job">
+        <time>Dic 2020 a Abr 2022</time>
+        <div><h3>Talent Specialist</h3><p class="where">Stori</p>
+          <ul>
+            <li>Reclutamiento de punta a punta para Tecnología, Marketing, Producto, Data y Operaciones, con ATS.</li>
+            <li>Coordiné planes de onboarding y capacitación para una experiencia consistente en equipos remotos y locales.</li>
+            <li>Alianzas con universidades para fortalecer la cantera de talento joven; apoyo a cultura, comunicación interna y nómina.</li>
+          </ul></div>
+      </article>
+      <article class="job">
+        <time>May 2019 a Dic 2020</time>
+        <div><h3>Acquisition and Happiness</h3><p class="where">Sin Delantal</p>
+          <ul>
+            <li>Diseñé estrategias de capacitación para equipos operativos que aceleraron su onboarding.</li>
+            <li>Creé recursos de aprendizaje digitales y visuales, y gestioné el contenido de RRHH en redes sociales.</li>
+            <li>Reclutamiento de alto volumen, engagement e iniciativas de comunicación interna.</li>
+          </ul></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="habilidades">
+  <div class="wrap">
+    <h2>Habilidades y herramientas</h2>
+    <p class="lead">Lo que uso para diseñar, construir y operar el aprendizaje.</p>
+    <div class="sk-grid">
+      <div class="sk-block"><h3>Aprendizaje y diseño instruccional</h3><div class="tags"><span>ADDIE</span><span>Evaluación Kirkpatrick</span><span>Action Mapping</span><span>Andragogía</span><span>Blended learning</span><span>Aprendizaje con IA</span><span>Gamificación</span></div></div>
+      <div class="sk-block"><h3>Talento y organización</h3><div class="tags"><span>Experiencia del colaborador</span><span>Onboarding</span><span>Desarrollo de talento</span><span>Desarrollo de liderazgo</span><span>Desarrollo organizacional</span><span>Gestión del desempeño</span><span>Comunicación interna y cultura</span><span>Employer branding</span><span>Atracción de talento</span></div></div>
+      <div class="sk-block"><h3>Construcción</h3><div class="tags"><span>Prototipado rápido</span><span>Plataformas de aprendizaje propias</span><span>Dashboards interactivos</span><span>Automatización de procesos</span><span>Solo builder</span></div></div>
+    </div>
+    <h3 class="tools-h">Herramientas</h3>
+    <div class="tool-groups">
+    <div class="tool-group">
+      <h4>IA y automatización</h4>
+      <div class="tool-row">
+        <div class="tool" title="Claude: Prototipos, contenido y código con IA"><span class="mono" aria-hidden="true">Cl</span><div><b>Claude</b><span>Prototipos, contenido y código con IA</span></div></div>
+        <div class="tool" title="Gemini: Apoyo con IA en contenido y desarrollo"><span class="mono" aria-hidden="true">Ge</span><div><b>Gemini</b><span>Apoyo con IA en contenido y desarrollo</span></div></div>
+        <div class="tool" title="ChatGPT: Borradores, ideas y análisis con IA"><span class="mono" aria-hidden="true">Gp</span><div><b>ChatGPT</b><span>Borradores, ideas y análisis con IA</span></div></div>
+        <div class="tool" title="n8n: Flujos automáticos, como la creación de cursos"><span class="mono" aria-hidden="true">n8</span><div><b>n8n</b><span>Flujos automáticos, como la creación de cursos</span></div></div>
+        <div class="tool" title="Apps Script: Automatización y dashboards en Google Workspace"><span class="mono" aria-hidden="true">AS</span><div><b>Apps Script</b><span>Automatización y dashboards en Google Workspace</span></div></div>
+        <div class="tool" title="Firebase: Base de datos de plataformas propias"><span class="mono" aria-hidden="true">Fb</span><div><b>Firebase</b><span>Base de datos de plataformas propias</span></div></div>
+        <div class="tool" title="HTML: Interfaces y plataformas propias"><span class="mono" aria-hidden="true">&lt;/&gt;</span><div><b>HTML</b><span>Interfaces y plataformas propias</span></div></div>
+      </div>
+    </div>
+    <div class="tool-group">
+      <h4>Plataformas y HR Tech</h4>
+      <div class="tool-row">
+        <div class="tool" title="Eloomi (LMS): Administración de contenido, datos y proveedores"><span class="mono" aria-hidden="true">El</span><div><b>Eloomi (LMS)</b><span>Administración de contenido, datos y proveedores</span></div></div>
+        <div class="tool" title="Greenhouse (ATS): Reclutamiento y seguimiento de candidatos"><span class="mono" aria-hidden="true">Gh</span><div><b>Greenhouse (ATS)</b><span>Reclutamiento y seguimiento de candidatos</span></div></div>
+        <div class="tool" title="Plataformas gamificadas: Academias propias con retos y XP"><span class="mono" aria-hidden="true">XP</span><div><b>Plataformas gamificadas</b><span>Academias propias con retos y XP</span></div></div>
+      </div>
+    </div>
+    <div class="tool-group">
+      <h4>Diseño y contenido</h4>
+      <div class="tool-row">
+        <div class="tool" title="Articulate Storyline: Cursos e-learning interactivos"><span class="mono" aria-hidden="true">St</span><div><b>Articulate Storyline</b><span>Cursos e-learning interactivos</span></div></div>
+        <div class="tool" title="Camtasia: Video y tutoriales"><span class="mono" aria-hidden="true">Ca</span><div><b>Camtasia</b><span>Video y tutoriales</span></div></div>
+        <div class="tool" title="Genially: Contenido interactivo"><span class="mono" aria-hidden="true">Ge</span><div><b>Genially</b><span>Contenido interactivo</span></div></div>
+        <div class="tool" title="Canva: Material visual"><span class="mono" aria-hidden="true">Cv</span><div><b>Canva</b><span>Material visual</span></div></div>
+        <div class="tool" title="Photopea: Edición de imágenes"><span class="mono" aria-hidden="true">Pp</span><div><b>Photopea</b><span>Edición de imágenes</span></div></div>
+        <div class="tool" title="Midjourney: Imágenes con IA"><span class="mono" aria-hidden="true">Mj</span><div><b>Midjourney</b><span>Imágenes con IA</span></div></div>
+        <div class="tool" title="Adobe: Suite de diseño"><span class="mono" aria-hidden="true">Ad</span><div><b>Adobe</b><span>Suite de diseño</span></div></div>
+      </div>
+    </div>
+    </div>
+    <div class="sk-meta">
+      <div><small>Formación</small><b>Lic. en Psicología, UNAM (2015)</b></div>
+      <div><small>Idiomas</small><b>Español nativo · Inglés B1</b></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>© 2026 Anallely Garrido. Lic. en Psicología, UNAM.</span>
+    <a href="https://www.linkedin.com/in/anallely-garrido/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</footer>
+
+<dialog id="lb" aria-label="Galería de imágenes">
+  <div class="lb-top"><span id="lbc"></span><button type="button" class="lb-btn" id="lbx">Cerrar ✕</button></div>
+  <button type="button" class="lb-btn lb-nav prev" id="lbp" aria-label="Imagen anterior">‹</button>
+  <div class="lb-stage" id="lbstage"><img id="lbimg" alt=""><p id="lbcap"></p></div>
+  <button type="button" class="lb-btn lb-nav next" id="lbn" aria-label="Imagen siguiente">›</button>
+  <div class="lb-thumbs" id="lbthumbs" aria-label="Imágenes del caso"></div>
+</dialog>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+
+  /* tabs de cada caso */
+  $$('.tabs').forEach(function(group){
+    var tabs=$$('.tab',group);
+    function pick(t){
+      tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
+        document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){pick(t)});
+      t.addEventListener('keydown',function(e){
+        var n=null;
+        if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+        if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+        if(e.key==='Home')n=tabs[0];
+        if(e.key==='End')n=tabs[tabs.length-1];
+        if(n){e.preventDefault();pick(n);n.focus();}
+      });
+    });
+  });
+
+
+  /* visor de imágenes */
+  var lb=$('#lb'),lbi=$('#lbimg'),lbcap=$('#lbcap'),lbc=$('#lbc'),thumbs=$('#lbthumbs'),list=[],idx=0;
+  function capOf(im){
+    var f=im.closest('figure'),c=f&&f.nextElementSibling;
+    if(c&&c.classList.contains('cap'))return c.textContent;
+    var h=f&&f.querySelector('figcaption h3');
+    return h?h.textContent:im.alt;
+  }
+  function show(i){
+    idx=(i+list.length)%list.length;var im=list[idx];
+    lbi.src=im.src;lbi.alt=im.alt;lbcap.textContent=capOf(im);
+    lbc.textContent='Imagen '+(idx+1)+' de '+list.length;
+    $$('button',thumbs).forEach(function(b,k){b.setAttribute('aria-current',k===idx)});
+    var cur=thumbs.children[idx];if(cur&&cur.scrollIntoView)cur.scrollIntoView({inline:'center',block:'nearest'});
+    var panel=im.closest('.panel');
+    if(panel&&panel.hidden){var t=document.querySelector('[aria-controls="'+panel.id+'"]');if(t)t.click();}
+  }
+  function openAt(img){
+    var sec=img.closest('section');
+    list=$$('.shot img,.pic img',sec);
+    idx=list.indexOf(img);
+    lb.classList.toggle('single',list.length<2);
+    thumbs.innerHTML='';
+    list.forEach(function(im,k){
+      var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ir a la imagen '+(k+1));
+      var t=document.createElement('img');t.src=im.src;t.alt='';b.appendChild(t);
+      b.addEventListener('click',function(){show(k)});thumbs.appendChild(b);
+    });
+    show(idx);lb.showModal();
+    try{document.documentElement.style.overflow='hidden'}catch(e){}
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.shot button,.pic button');
+    if(b)openAt(b.querySelector('img'));
+  });
+  lb.addEventListener('close',function(){try{document.documentElement.style.overflow=''}catch(e){}});
+  $('#lbx').addEventListener('click',function(){lb.close()});
+  $('#lbp').addEventListener('click',function(){show(idx-1)});
+  $('#lbn').addEventListener('click',function(){show(idx+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.id==='lbstage')lb.close()});
+  lb.addEventListener('keydown',function(e){
+    if(list.length<2)return;
+    if(e.key==='ArrowLeft'){e.preventDefault();show(idx-1);}
+    if(e.key==='ArrowRight'){e.preventDefault();show(idx+1);}
+  });
+  var sx=null;
+  $('#lbstage').addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  $('#lbstage').addEventListener('touchend',function(e){
+    if(sx===null||list.length<2)return;
+    var dx=e.changedTouches[0].clientX-sx;sx=null;
+    if(Math.abs(dx)>50)show(dx<0?idx+1:idx-1);
+  },{passive:true});
+
+  /* menú móvil */
+  var burger=$('#burger'),menu=$('#menu');
+  function setMenu(o){menu.hidden=!o;burger.setAttribute('aria-expanded',o);burger.textContent=o?'Cerrar':'Menú';}
+  burger.addEventListener('click',function(){setMenu(menu.hidden)});
+  $$('a',menu).forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden){setMenu(false);burger.focus();}});
+
+  /* posición actual: menú principal y submenú de casos */
+  var secs=['sistema','casos','metodo','trayectoria','habilidades'].map(function(id){return document.getElementById(id)});
+  var secIds=['sistema','casos','metodo','trayectoria','habilidades'];
+  var subLinks=$$('#subin a'),subTargets=subLinks.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  var sub=$('#sub'),subin=$('#subin'),lastSub=-2,raf=0;
+  function spy(){
+    raf=0;
+    var y=window.innerHeight*0.35,cur=-1;
+    secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=y)cur=i;});
+    $$('[data-sec]').forEach(function(a){a.classList.toggle('on',cur>=0&&a.dataset.sec===secIds[cur]);});
+    var inCasos=cur===1;
+    sub.hidden=!inCasos;
+    if(inCasos){
+      var c=-1;subTargets.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=window.innerHeight*0.5)c=i;});
+      subLinks.forEach(function(a,i){a.classList.toggle('on',i===c);});
+      if(c!==lastSub&&c>=0){lastSub=c;var a=subLinks[c];subin.scrollTo({left:a.offsetLeft-(subin.clientWidth-a.offsetWidth)/2,behavior:'smooth'});}
+    }
+  }
+  function onScroll(){if(!raf)raf=requestAnimationFrame(spy)}
+  window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);spy();
+
+  /* mapa de acciones */
+  var am=$('#amap');
+  if(am){
+    var boxes=$$('.am',am),clear=$('#amclear'),hint=$('#amhint'),cur=null;
+    var canHover=window.matchMedia&&window.matchMedia('(hover:hover)').matches;
+    function sel(g){
+      cur=g;
+      boxes.forEach(function(b){var on=!!g&&(b.dataset.g==='all'||b.dataset.g===g);b.classList.toggle('on',on);
+        if(b.dataset.g!=='all')b.setAttribute('aria-pressed',!!g&&b.dataset.g===g);});
+      am.classList.toggle('sel',!!g);
+      clear.hidden=!g;
+      hint.textContent=g?'Resaltado: la acción y su práctica en Ops Lab.':'Toca una acción o una práctica para ver cómo se conectan.';
+    }
+    boxes.forEach(function(b){
+      if(b.dataset.g==='all')return;
+      b.tabIndex=0;
+      b.addEventListener('click',function(){sel(!canHover&&cur===b.dataset.g?null:b.dataset.g)});
+      b.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();sel(cur===b.dataset.g?null:b.dataset.g)}});
+      if(canHover)b.addEventListener('mouseenter',function(){sel(b.dataset.g)});
+    });
+    if(canHover)am.addEventListener('mouseleave',function(){sel(null)});
+    clear.addEventListener('click',function(){sel(null)});
+  }
+})();
+</script>
+
+</body></html>
